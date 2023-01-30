@@ -15,3 +15,7 @@
 <div>
   Celoten odgovor: {{ fullResponse }}
 </div>
+
+<button *ngIf="Pwa.promptEvent" (click)="installPwa()">
+  Instaliraj PWA
+</button>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PwaService } from './service/pwa.service';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,11 @@ export class AppComponent {
   lat = '';
   lon = '';
 
+  constructor(public Pwa: PwaService) {}
+  
+  installPwa(): void {
+    this.Pwa.promptEvent.prompt();
+  }
   getGeolocation(): void {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position: GeolocationPosition) => {

@@ -5,7 +5,11 @@ import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
 if (environment.production) {
-  enableProdMode();
+  try{
+    enableProdMode();
+  }catch(e: any){
+    console.log("Ignoring " + e.toString())
+  }
 }
 
 platformBrowserDynamic().bootstrapModule(AppModule)
