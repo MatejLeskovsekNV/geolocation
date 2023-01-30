@@ -6,6 +6,7 @@ import { DxButtonModule } from 'devextreme-angular/ui/button';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { PwaService } from './service/pwa.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],
-  providers: [],
+  providers: [PwaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
