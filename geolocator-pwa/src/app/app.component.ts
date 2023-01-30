@@ -7,14 +7,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Geolocator PWA';
-  geolocation = 'pritisni iskanje geolokacije';
+  geolocation = '';
   fullResponse = '';
+  lat = '';
+  lon = '';
 
   getGeolocation(): void {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position: GeolocationPosition) => {
         if (position) {
           this.geolocation = '(' + position.coords.latitude + ', ' + position.coords.longitude + ')';
+          this.lat = position.coords.latitude.toString();
+          this.lon = position.coords.longitude.toString();
         }
         this.fullResponse = JSON.stringify(this.cloneAsObject(position));
       },

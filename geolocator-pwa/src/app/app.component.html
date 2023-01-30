@@ -5,9 +5,13 @@
 </dx-button>
 
 <div>
-  Geolokacija: {{geolocation}}
+  Geolokacija:
+<a href='https://maps.google.com/?q={{lat}},{{lon}}' target="_blank">
+  <a href='https://maps.apple.com/?q={{lat}},{{lon}}' target="_blank">
+    {{geolocation}}
+  </a>
+</a>
 </div>
-
 <div>
   Celoten odgovor: {{ fullResponse }}
 </div>
